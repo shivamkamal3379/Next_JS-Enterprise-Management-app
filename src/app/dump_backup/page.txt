@@ -1,0 +1,42 @@
+ "use client";
+import {useState} from "react";
+import { Menu, MenuItem, ProductItem, HoveredLink } from "../components/ui/navbar-menu";
+ 
+export default function Home() {
+  const [active, setActive] = useState<string | null>(null);
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      {/* Navbar */}
+      <Menu setActive={setActive}>
+        <MenuItem item="Index" active={active} setActive={setActive}>
+          <ProductItem
+            title="sales pro "
+            description="The leader in automobile sales"
+            href="https://google.com"
+            src="/bmw.jpg"
+          />
+        </MenuItem>
+
+        <MenuItem item="Resources" active={active} setActive={setActive}>
+          <HoveredLink href="https://youtube.com">Docs</HoveredLink>
+          <  br />          <  br />
+
+          <HoveredLink href="https://chatgpt.com">Templates</HoveredLink>
+        </MenuItem>
+
+        <MenuItem item="About" active={active} setActive={setActive}>
+          <HoveredLink href="/about">Our Team</HoveredLink>
+          <br />          <br />
+          <HoveredLink href="/contact">Contact</HoveredLink>
+        </MenuItem>
+      </Menu>
+
+      {/* Page content */}
+      <main className="p-8">
+        <h1 className="text-3xl font-bold text-black dark:text-white">
+          welcome to the sales pro </h1>
+      </main>
+    </div>
+  );
+}

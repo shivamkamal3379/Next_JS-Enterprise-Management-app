@@ -1,0 +1,96 @@
+import React from 'react';
+
+export default function DashboardPage() {
+  return (
+    <div className="p-8">
+      {/* Page Title */}
+      <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+        Main Dashboard
+      </h1>
+
+      {/* Grid for Dashboard Widgets */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        {/* Sales Summary Card */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Total Sales</h2>
+          <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">$1,250,000</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">+15% from last month</p>
+        </div>
+
+        {/* New Users Card */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">New Customers</h2>
+          <p className="text-4xl font-bold text-green-600 dark:text-green-400">230</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Up from 180 last quarter</p>
+        </div>
+
+        {/* Pending Payments Card */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Pending Payments</h2>
+          <p className="text-4xl font-bold text-red-600 dark:text-red-400">12</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Requiring immediate attention</p>
+        </div>
+
+        {/* Total Branches Card */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+          <h2 className="text-xl font-semibold text-gray-700 dark:text-gray-200 mb-2">Total Branches</h2>
+          <p className="text-4xl font-bold text-purple-600 dark:text-purple-400">15</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Across all company groups</p>
+        </div>
+
+      </div>
+
+      {/* Sales Chart Section */}
+      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Sales Performance</h2>
+        {/* Placeholder for a chart (e.g., using a library like Chart.js or Recharts) */}
+        <div className="h-64 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg text-gray-400 dark:text-gray-500">
+          Sales Chart Placeholder
+        </div>
+      </div>
+      
+      {/* Recent Activity Section */}
+      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
+        <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-4">Recent Payments</h2>
+        {/* Placeholder for a recent activity table */}
+        <div className="overflow-x-auto">
+          <table className="min-w-full table-auto">
+            <thead className="border-b-2 border-gray-200 dark:border-gray-700">
+              <tr>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Payment ID</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Type</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Amount</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Date</th>
+                <th className="px-4 py-2 text-left text-sm font-medium text-gray-500 dark:text-gray-400">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b dark:border-gray-700">
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">PAY-001</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">Cash</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">$500.00</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">2025-09-24</td>
+                <td className="px-4 py-4 text-sm text-green-600">Completed</td>
+              </tr>
+              <tr className="border-b dark:border-gray-700">
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">PAY-002</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">Instrument</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">$1,200.00</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">2025-09-23</td>
+                <td className="px-4 py-4 text-sm text-yellow-600">Pending</td>
+              </tr>
+              <tr className="border-b dark:border-gray-700">
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">PAY-003</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">Cash</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">$250.00</td>
+                <td className="px-4 py-4 text-sm text-gray-800 dark:text-gray-200">2025-09-22</td>
+                <td className="px-4 py-4 text-sm text-red-600">Bounced</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
